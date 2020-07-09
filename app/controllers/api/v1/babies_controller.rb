@@ -46,6 +46,6 @@ class Api::V1::BabiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def baby_params
-      params.require(:baby).permit(:name, :list_id)
+      params.require(:baby).permit(:id, :crossed_out, :name, :list_id)
     end
 end

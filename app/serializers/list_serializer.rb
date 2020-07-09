@@ -4,4 +4,8 @@ class ListSerializer < ActiveModel::Serializer
 
 
   has_many :babies, serializer: BabySerializer
+
+  def babies
+    object.babies.order(:created_at)
+  end
 end
