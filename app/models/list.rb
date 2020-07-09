@@ -6,6 +6,6 @@ class List < ApplicationRecord
   validates :public_id, uniqueness: true
 
   def generate_public_id
-    self.public_id = SecureRandom.urlsafe_base64(12)
+    self.public_id = SecureRandom.alphanumeric(12)
   end
 end
