@@ -3,5 +3,5 @@ class ListSerializer < ActiveModel::Serializer
              :public_id
 
 
-  has_many :babies
+  has_many :babies, serializer: BabySerializer
 end

@@ -3,9 +3,9 @@ class Api::V1::ListsController < ApplicationController
 
   # GET /lists
   def index
-    @lists = List.all
+    @list = List.create()
 
-    render json: @lists
+    render json: @list
   end
 
   # GET /lists/1
@@ -41,11 +41,11 @@ class Api::V1::ListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
-      @list = List.find(params[:id])
+      @list = List.where(public_id: params[:id]).first
     end
 
     # Only allow a trusted parameter "white list" through.
     def list_params
-      params.require(:list).permit(:public_id)
+      params.require(:list).permit(:id)
     end
 end
