@@ -1,17 +1,5 @@
 class Api::V1::BabiesController < ApplicationController
-  before_action :set_baby, only: [:show, :update, :destroy]
-
-  # GET /babies
-  def index
-    @babies = Baby.all
-
-    render json: @babies
-  end
-
-  # GET /babies/1
-  def show
-    render json: @baby
-  end
+  before_action :set_baby, only: [:update]
 
   # POST /babies
   def create
@@ -31,11 +19,6 @@ class Api::V1::BabiesController < ApplicationController
     else
       render json: @baby.errors, status: :unprocessable_entity
     end
-  end
-
-  # DELETE /babies/1
-  def destroy
-    @baby.destroy
   end
 
   private
