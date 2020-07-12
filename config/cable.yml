@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: redis://redistogo:2f07fb553613c570f3843d984d15baa5@dory.redistogo.com:10610/
   channel_prefix: baby_names_api_production
